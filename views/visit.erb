@@ -1,5 +1,5 @@
 <h3>Register</h3>
-
+<%= @message %>
 <form action="/visit" method="POST">
   <div class="form-text">
     <label for="exampleInputEmail1" class="form-label">Your name:</label>
@@ -19,6 +19,14 @@
     <br/>
   </div>
 
+  <select name="master" class="form-select" aria-label="Default select example">
+    <option selected>Select your master</option>
+    <option value="1">Walter Wait</option>
+    <option value="2">Jessie Pincman</option>
+    <option value="3">Gus Frink</option>
+  </select>
+<br/>
+<br/>
 
   <button type="submit" class="btn btn-primary">Register</button>
 </form>
