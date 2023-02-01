@@ -25,8 +25,26 @@
     <option value="2">Jessie Pincman</option>
     <option value="3">Gus Frink</option>
   </select>
+
+  <select id="color" name="color">
+  <option value="#7bd148">Green</option>
+  <option value="#5484ed">Bold blue</option>
+  <option value="#a4bdfc">Blue</option>
+  <option value="#46d6db">Turquoise</option>
+  <option value="#7ae7bf">Light green</option>
+  <option value="#51b749">Bold green</option>
+  <option value="#fbd75b">Yellow</option>
+  <option value="#ffb878">Orange</option>
+  <option value="#ff887c">Red</option>
+  <option value="#dc2127">Bold red</option>
+  <option value="#dbadff">Purple</option>
+  <option value="#e1e1e1">Gray</option>
+</select>
 <br/>
 <br/>
 
   <button type="submit" class="btn btn-primary">Register</button>
 </form>
+<script type="text/javascript">
+  $('#color').simplecolorpicker();
+</script>

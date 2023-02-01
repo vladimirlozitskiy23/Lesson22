@@ -24,6 +24,7 @@ post '/visit' do
 	@phone    = params[:phone]
 	@datatime = params[:datatime]
 	@master   = params[:master]
+	@color    = params[:color]
 	if @master == '1'
 		@master = 'Walter White'
 	elsif @master == '2'
@@ -32,9 +33,9 @@ post '/visit' do
 		@master = 'Gus Fring'
 	end
 
-	@message = "#{@username}, you register on #{@datatime}.Your master #{@master}. We are waiting for you!"
+	@message = "#{@username}, you register on #{@datatime}.Your master #{@master}.Color: #{@color}. We are waiting for you!"
 	f = File.open './public/visit.txt', 'a'
-	f.write "Username: #{@username}, phone: #{@phone}, date and time: #{@datatime}, master: #{@master}"
+	f.write "Username: #{@username}, phone: #{@phone}, date and time: #{@datatime}, master: #{@master}, color: #{@color}"
 	f.close
 	erb :visit
 end
