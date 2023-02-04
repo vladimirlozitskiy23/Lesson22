@@ -3,19 +3,19 @@
 <form action="/visit" method="POST">
   <div class="form-text">
     <label for="exampleInputEmail1" class="form-label">Your name:</label>
-    <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your name">
+    <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your name" value="<%= @username%>">
     <br/>
   </div>
 
   <div class="form-text">
     <label for="exampleInputEmail1" class="form-label">Your phone:</label>
-    <input name="phone" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your phone">
+    <input name="phone" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your phone" value="<%= @phone%>">
     <br/>
   </div>
 
   <div class="form-text">
     <label for="exampleInputEmail1" class="form-label">Date and time:</label>
-    <input name="datatime" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="date and time">
+    <input name="datatime" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="date and time" <%= @datatime%>>
     <br/>
   </div>
 
