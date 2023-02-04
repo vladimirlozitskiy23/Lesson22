@@ -33,6 +33,19 @@ post '/visit' do
 		@master = 'Gus Fring'
 	end
 
+	hh = {
+		:username => 'Enter name',
+		:phone    => 'Enter phone',
+		:datatime => 'Enter date and time'
+	}
+
+	hh.each do |key, value|
+		if params[key] == ''
+			@error = hh[key]
+			return erb :visit
+	end
+end
+
 	@message = "#{@username}, you register on #{@datatime}.Your master #{@master}.Color: #{@color}. We are waiting for you!"
 	f = File.open './public/visit.txt', 'a'
 	f.write "Username: #{@username}, phone: #{@phone}, date and time: #{@datatime}, master: #{@master}, color: #{@color}"
