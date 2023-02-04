@@ -39,12 +39,7 @@ post '/visit' do
 		:datatime => 'Enter date and time'
 	}
 
-	hh.each do |key, value|
-		if params[key] == ''
-			@error = hh[key]
-			return erb :visit
-	end
-end
+  @error = hh.select {|key,_| params[key] == '' }.values.join ', '
 
 	@message = "#{@username}, you register on #{@datatime}.Your master #{@master}.Color: #{@color}. We are waiting for you!"
 	f = File.open './public/visit.txt', 'a'
@@ -57,6 +52,8 @@ post '/contacts' do
 	@email    = params[:email]
 	@contacts = params[:contacts]
 	@message = "We get your data!"
+	hh = {:email => 'Enter email', :contacts => 'Enter contacts'}
+	@error = hh.select {|key,_| params[key]== ''}.values.join(', ')
 	f = File.open './public/contacts.txt', 'a'
 	f.write "Email: #{@email}, contacts: #{@contacts}"
 	f.close
